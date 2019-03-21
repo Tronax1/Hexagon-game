@@ -7,11 +7,13 @@ int main(){
 	bool play = true;
 	int option;
 	Hexagon board;
-	while (play) {
+	board.show_state();
+	while (play) {	
 		int i, j;
 		cin >> i;
 		cin >> j;
 		board.add_edge(i, j);
+		board.modify_state(i, j);
 		board.show_state();
 		cout << "Press 0 to keep playing" << endl;
 		cin >> option;
