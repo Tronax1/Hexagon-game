@@ -34,6 +34,15 @@ Hexagon::Hexagon() {
 	table[5].position_x = 4;
 	table[5].position_y = 0;
 }
+bool Hexagon::game_over() {
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 6; j++) {
+			if (graph[i][j] == -1)
+				return false;
+		}
+	}
+	return true;
+}
 void Hexagon::add_edge(int i, int j){
 	graph[i][j] = 0;
 	graph[j][i] = 0;
@@ -68,6 +77,13 @@ void Hexagon::modify_state(int i, int j) {
 	if (min == 1 && max == 2) {
 		UI[1][7] = '*';
 		UI[2][7] = '*';
+		UI[3][7] = '*';
+	}
+	if (min == 0 && max == 2) {
+		UI[0][3] = '*';
+		UI[0][4] = '*';
+		UI[1][5] = '*';
+		UI[2][6] = '*';
 		UI[3][7] = '*';
 	}
 	if (min == 2 && max == 3) {

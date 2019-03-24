@@ -14,6 +14,7 @@ private:
 	vertex table[6];
 public:
 	Hexagon();
+	bool game_over();
 	void add_edge(int i, int j);
 	void modify_state(int i, int j);
 	void show_state();
